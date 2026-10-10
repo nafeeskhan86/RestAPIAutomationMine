@@ -6,6 +6,9 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.testng.Assert.assertTrue;
 
 public class ExampleTest {
@@ -53,7 +56,7 @@ public class ExampleTest {
         String requestBody = """
                 {
                     "article": {
-                        "title": "Ertugrul1003",
+                        "title": "Ertugrul1010",
                         "description": "test desc",
                         "body": "test body",
                         "tagList": [
@@ -71,6 +74,7 @@ public class ExampleTest {
                 .then()
                 .statusCode(201)
                 .extract().response();
+        assertThat(res.getBody().asString(),matchesJsonSchemaInClasspath("schemas/postArticle-Response.json"));
         JsonPath jsonPath = new JsonPath(res.asString());
         System.out.println(jsonPath.getString("article.title"));
     }

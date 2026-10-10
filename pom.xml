@@ -29,6 +29,13 @@
             <version>3.2.3</version>
             <scope>compile</scope>
         </dependency>
+        <!-- Source: https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>6.0.1</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <properties>
