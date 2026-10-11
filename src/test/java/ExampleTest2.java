@@ -73,7 +73,7 @@ public class ExampleTest2 {
 //                """;
 
         CreateArticleRequest article = new CreateArticleRequest();
-        article.setTitle("Nafees1016");
+        article.setTitle("Nafees1017");
         article.setDescription("Test Description");
         article.setBody("Test Body");
         article.setTagList(List.of("Nafees", "Khan"));
